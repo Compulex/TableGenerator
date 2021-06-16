@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Table Generator</title>
+    </head>
+    <body>
+        <h1>Table Generator</h1>
+
+        <div id="choose">
+            <div id="empty" class="choice" onclick="makeETable();">
+                <h2>EMPTY</h2>
+            </div>
+
+            <div id="fill_in" class="choice" onclick="makeFTable();">
+                <h2>FILL IN</h2>
+            </div>
+        </div>
+
+		<button id="switchBtn" onclick="switchEdit();">&#8644;</button>
+
+        <div id="main">
+            <h2 id="title"></h2>
+			<div id="table_container">
+				<table id="my_tbl"></table>
+				<br>
+				<button id="viewBtn" onclick="viewTable();">VIEW</button>
+			</div>
+			
+			<div id="setup"></div>
+        </div>
+
+        <script src="generate_table.js"></script>
+    </body>
+</html>
