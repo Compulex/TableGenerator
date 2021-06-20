@@ -944,12 +944,30 @@ function switchEdit(){
     else if(title.innerHTML == "Fill In Table"){ makeETable(); }
 }//switchEdit
 
-function viewTable(){
-    var newWindow = window.open("");
-    newWindow.document.body.appendChild(table);
-    newWindow.document.body.style.textAlign = "center";
-    /*newWindow.print();
-    newWindow.close();*/
+function printTable(){
+    var body = document.body;
+    //clone table
+    var clone_table = table.cloneNode(true);
+    //hide everything
+    document.getElementsByTagName("h1")[0].style.display = "none";
+    choose_div.style.display = "none";
+    document.getElementById("switchBtn").style.display = "none";
+    main.style.display = "none";
+
+    body.appendChild(clone_table);
+    body.style.width = "auto";
+    body.style.height = "auto";
+
+    window.print();
+
+    console.log(body.lastChild);
+    body.removeChild(body.lastChild);
+
+    
+    //show everything
+    document.getElementsByTagName("h1")[0].style.display = "block";
+    document.getElementById("switchBtn").style.display = "inline-block";
+    main.style.display = "block";
 }//viewTable
 
 /* FILL IN YOUR OWN DATA */ 
